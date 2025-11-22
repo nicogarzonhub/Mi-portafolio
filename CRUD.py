@@ -20,10 +20,36 @@ class Crud:
             next(reader)
             return list(reader)
 
-    # ================================
-    # ✔ ELIMINAR UN PRODUCTO POR NOMBRE
-    # ================================
-    def eliminar(self, archivo, nombre):
+
+
+inventario = []
+
+def cargar_desde_csv():
+    inventario.clear()
+    try:
+        with open("datos.csv", newline="", encoding="utf-8") as archivo:
+            lector = csv.DictReader(archivo)
+            for fila in lector:
+                fila["cantidad"] = int(fila["cantidad"])
+                fila["precio"] = float(fila["precio"])
+                inventario.append(fila)
+    except FileNotFoundError:
+        print("⚠️ El archivo datos.csv no existe aún.")
+
+
+def guardar_en_csv():
+    with open("datos.csv", "w", newline="", encoding="utf-8") as archivo:
+        columnas = ["nombre", "cantidad", "precio"]
+        escritor = csv.DictWriter(archivo, fieldnames=columnas)
+        escritor.writeheader()
+        escritor.writerows(inventario)
+
+
+   
+   
+    # ELIMINAR UN PRODUCTO POR NOMBRE
+ 
+def eliminar(self, archivo, nombre):
         filas = []
         eliminado = False
 
@@ -45,7 +71,7 @@ class Crud:
 
     #  ACTUALIZAR UN PRODUCTO POR NOMBRE 
     
-    def actualizar(self, archivo, nombre, nuevo_precio, nueva_cantidad):
+def actualizar(self, archivo, nombre, nuevo_precio, nueva_cantidad):
         filas = []
         actualizado = False
 
@@ -66,6 +92,8 @@ class Crud:
             writer.writerows(filas)
 
         return actualizado
+    
+
 
         
 
