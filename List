@@ -1,0 +1,8 @@
+inventario = [
+    {"nombre": "Café", "precio": 5000, "cantidad": 10},
+    {"nombre": "Azúcar", "precio": 3000, "cantidad": 5}
+]
+
+# Agregar más
+inventario.append({"nombre": "Arroz", "precio": 2000, "cantidad": 12})
+inventario.append({"nombre": "Chocolate", "precio": 8000, "cantidad": 3})
