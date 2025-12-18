@@ -1,107 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    
-    </head>
-
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-light custom-nav">
-        <div class="container-fluid container">
-            <a class="navbar-brand logo-text" href="#">Biccas
-            
-            </a> 
-            
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Product">Product</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#FAQ">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Blog">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#About-us">About us</a></li>
-                </ul>
-            </div>
-            <div class="d-flex button-group">
-                <a href="#login.html" class="btn btn-outline-primary me-2 btn-login">Login</a>
-                <button class="btn btn-primary btn-signup">Sign Up</button>
-            </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+    <div class="container nav-content">
+
+        <!-- Logo -->
+        <div class="logo">
+            <h2>Biccas</h2>
         </div>
-    </nav>
 
-    <div id="home">
-        <header class="header text-center py-5 hero-section">
-            <div class="container">
-                <img src="/simulacro.png" alt="" srcset="">
-            </div>
-        </header>
+        <!-- Menú -->
+        <nav class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">Product</a>
+            <a href="#">FAQ</a>
+            <a href="#">Blog</a>
+            <a href="#">About Us</a>
+        </nav>
+
+        <!-- Acciones -->
+        <div class="nav-actions">
+            <a href="#" class="login">Login</a>
+            <a href="#" class="btn-signup">Sign Up</a>
+        </div>
+
     </div>
-    </div>
-    <section class="collabs">
-         <div class="container justify-content-center ">
-        <li class="people">More than 25.000 teams using collabs</li>
-         <li class=""><a class="" href="#"></a></li>
-        <li class=""><a class="" href="#"></a></li>
-        <li class=""><a class="" href="#"></a></li>
-        <li class=""><a class="" href="#"></a></li>
-        <li class=""><a class="" href="#"></a></li>
+</header>
 
-         </div>
 
+    <!-- Hero (Sección principal) -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Transforma tu Proyecto</h1>
+            <p>La mejor solución para tu producto, servicio o idea.</p>
+            <a href="#contacto" class="btn">Comenzar Ahora</a>
+        </div>
     </section>
-    
-    
 
-
-    <div id="contact"></div>
-    <footer class="footer mt-5 pt-5 pb-5 custom-footer">
-        <div class="container">
-            
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <h5>Support</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white-50">Help centre</a></li>
-                        <li><a href="#" class="text-white-50">Account information</a></li>
-                        <li><a href="#" class="text-white-50">About</a></li>
-                        <li><a href="#" class="text-white-50">Contact us</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-3 mb-4">
-                    <h5>Help and Solution</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="" class="text-white-50">Talk to support</a></li>
-                        <li><a href="" class="text-white-50">Support docs</a></li>
-                        <li><a href="" class="text-white-50">System Status</a></li>
-                         <li><a href="" class="text-white-50">Covid responde</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-md-6 mb-4">
-                    <h5>Product</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white-50">Update</a></li>
-                        <li><a href="#" class="text-white-50">Segurity</a></li>
-                        <li><a href="#" class="text-white-50">Beta test</a></li>
-                         <li><a href="" class="text-white-50">Pricing product</a></li>
-                        
-                    </ul>
-                </div>
-                
-               
-            <hr class="mt-4 border-light opacity-25">
-            
-            <div class="text-center text-white-50 small copyright-text">
-                &copy; 2025 Events Portal. All rights reserved.
-            </div>
+    <!-- Beneficios / Features -->
+    <section id="beneficios" class="features container">
+        <div class="feature-card">
+            <h3>Rápido</h3>
+            <p>Diseño optimized para usuarios y dispositivos.</p>
         </div>
+        <div class="feature-card">
+            <h3>Responsive</h3>
+            <p>Se adapta a móviles, tablets y escritorios.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Fácil</h3>
+            <p>Modifica textos y colores fácilmente.</p>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="testimonials container">
+        <h2>Lo que dicen nuestros usuarios</h2>
+        <div class="test-card">
+            <p>¡Excelente servicio! Muy intuitivo.</p>
+            <span>- Usuario 1</span>
+        </div>
+        <div class="test-card">
+            <p>Me encantó, es justo lo que necesitaba.</p>
+            <span>- Usuario 2</span>
+        </div>
+    </section>
+
+    <!-- Contacto / CTA -->
+    <section id="contacto" class="contact container">
+        <h2>Contáctanos</h2>
+        <form>
+            <input type="text" placeholder="Tu nombre">
+            <input type="email" placeholder="Tu email">
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <p>© 2025 MiMarca. Todos los derechos reservados.</p>
     </footer>
 
 </body>
 </html>
+
