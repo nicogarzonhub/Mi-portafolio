@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf7;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* NAV */
+.navbar {
+    padding: 25px 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: 30px;
+    background: #54bd95;
+    border-radius: 6px;
+}
+
+.nav-links span {
+    width: 60px;
+    height: 14px;
+    background: #ddd;
+    border-radius: 6px;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.login-placeholder {
+    width: 50px;
+    height: 14px;
+    background: #ddd;
+    border-radius: 6px;
+}
+
+.btn-placeholder {
+    width: 90px;
+    height: 32px;
+    background: #54bd95;
+    border-radius: 10px;
+}
+
+/* HERO */
+.hero {
+    padding: 80px 0;
+}
+
+.hero-content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-left {
+    width: 50%;
+}
+
+.hero-title {
+    width: 90%;
+    height: 42px;
+    background: #222;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.hero-title.short {
+    width: 70%;
+}
+
+.hero-text {
+    width: 80%;
+    height: 16px;
+    background: #ddd;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    width: 160px;
+    height: 40px;
+    background: #54bd95;
+    border-radius: 10px;
+}
+
+.hero-right {
+    width: 50%;
+}
+
+.hero-image {
+    width: 100%;
+    height: 350px;
+    background: #e9f2ff;
+    border-radius: 20px;
+}
+
+/* FEATURES */
+.features {
+    padding: 80px 0;
+}
+
+.features-cards {
+    display: flex;
+    gap: 30px;
+}
+
+.feature-card {
+    flex: 1;
+}
+
+.img-placeholder {
+    height: 140px;
+    background: #e9f2ff;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.title-placeholder {
+    width: 60%;
+    height: 18px;
+    background: #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.text-placeholder {
+    width: 100%;
+    height: 12px;
+    background: #eee;
+    border-radius: 6px;
+}
+
+/* BENEFITS */
+.benefits {
+    padding: 80px 0;
+}
+
+.benefits-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.benefits-left,
+.benefits-right {
+    width: 50%;
+}
+
+.big-title {
+    width: 80%;
+    height: 32px;
+    background: #222;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.list-item {
+    width: 90%;
+    height: 14px;
+    background: #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.big-image {
+    height: 320px;
+    background: #f0f0f0;
+    border-radius: 20px;
+}
+
+/* FOOTER */
+.footer {
+    padding: 40px 0;
+    background: #222;
+}
+
+.footer-content {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-block {
+    flex: 1;
+    height: 60px;
+    background: #444;
+    border-radius: 10px;
+}
