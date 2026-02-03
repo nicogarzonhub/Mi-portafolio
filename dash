@@ -1,0 +1,171 @@
+// =======================
+// STORAGE
+// =======================
+function getTasks() {
+  return JSON.parse(localStorage.getItem("tasks")) || [];
+}
+
+function saveTasks(tasks) {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+// =======================
+// CREATE TASK (demo)
+// =======================
+function createTask(user = "Sarah", total = "$0") {
+  const tasks = getTasks();
+
+  tasks.push({
+    id: Date.now(),
+    user,
+    date: new Date().toLocaleDateString(),
+    status: "Pending",
+    total
+  });
+
+  saveTasks(tasks);
+  renderDashboard();
+  renderMyTasks();
+  updateStats();
+}
+
+// =======================
+// UPDATE STATUS
+// =======================
+let selectedTaskId = null;
+
+function selectTask(id) {
+  selectedTaskId = id;
+}
+
+function updateOrderStatus() {
+  if (!selectedTaskId) return alert("Select a task first");
+
+  const newStatus = document.getElementById("statusSelect").value;
+  const tasks = getTasks();
+
+  const task = tasks.find(t => t.id === selectedTaskId);
+  if (task) task.status = newStatus;
+
+  saveTasks(tasks);
+  renderDashboard();
+  renderMyTasks();
+  updateStats();
+}
+
+// =======================
+// DELETE
+// =======================
+function deleteTask(id) {
+  const tasks = getTasks().filter(t => t.id !== id);
+  saveTasks(tasks);
+  renderDashboard();
+  renderMyTasks();
+  updateStats();
+}
+
+// =======================
+// DASHBOARD TABLE
+// =======================
+function renderDashboard() {
+  const tasks = getTasks();
+  const tbody = document.getElementById("ordersTableBody");
+  tbody.innerHTML = "";
+
+  tasks.forEach(task => {
+    const tr = document.createElement("tr");
+    tr.onclick = () => selectTask(task.id);
+
+    tr.innerHTML = `
+      <td>${task.id}</td>
+      <td>${task.user}</td>
+      <td>${task.date}</td>
+      <td>
+        <span class="badge ${
+          task.status === "Delivered" ? "bg-success" :
+          task.status === "Ready" ? "bg-info" :
+          task.status === "Preparing" ? "bg-warning" : "bg-secondary"
+        }">${task.status}</span>
+      </td>
+      <td>${task.total}</td>
+      <td>
+        <button class="btn btn-sm btn-outline-danger" onclick="event.stopPropagation(); deleteTask(${task.id})">
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
+    `;
+
+    tbody.appendChild(tr);
+  });
+}
+
+// =======================
+// MY TASKS (READ ONLY)
+// =======================
+function renderMyTasks() {
+  const tasks = getTasks();
+  const table = document.querySelector("#solicitudes tbody");
+  table.innerHTML = "";
+
+  tasks.forEach(task => {
+    table.innerHTML += `
+      <tr>
+        <td>${task.id}</td>
+        <td>General Task</td>
+        <td>${task.user}</td>
+        <td>${task.date}</td>
+        <td>
+          <span class="badge ${
+            task.status === "Delivered" ? "bg-success" :
+            task.status === "Ready" ? "bg-info" :
+            task.status === "Preparing" ? "bg-warning" : "bg-secondary"
+          }">${task.status}</span>
+        </td>
+        <td class="text-end">
+          <button class="btn btn-sm btn-outline-secondary" disabled>
+            Solo lectura
+          </button>
+        </td>
+      </tr>
+    `;
+  });
+}
+
+// =======================
+// STATS
+// =======================
+function updateStats() {
+  const tasks = getTasks();
+
+  document.getElementById("totalOrders").innerText = tasks.length;
+  document.getElementById("pendingOrders").innerText =
+    tasks.filter(t => t.status === "Pending").length;
+  document.getElementById("todayRevenue").innerText =
+    tasks.filter(t => t.status === "Delivered").length;
+}
+
+// =======================
+// MENU NAV
+// =======================
+document.querySelectorAll(".menu-link").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelectorAll(".menu-link").forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active-page"));
+    document.getElementById(link.dataset.page).classList.add("active-page");
+  });
+});
+
+// =======================
+// INIT
+// =======================
+renderDashboard();
+renderMyTasks();
+updateStats();
+
+// Demo data (solo si no hay nada)
+if (getTasks().length === 0) {
+  createTask("Sarah", "$120");
+  createTask("John", "$80");
+}
