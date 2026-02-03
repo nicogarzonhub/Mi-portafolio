@@ -1,0 +1,257 @@
+// =======================
+// GLOBALS
+// =======================
+let selectedTaskId = null;
+let editingTaskId = null;
+
+// =======================
+// STORAGE
+// =======================
+function getTasks() {
+  return JSON.parse(localStorage.getItem("tasks")) || [];
+}
+
+function saveTasks(tasks) {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+// =======================
+// CREATE / UPDATE HANDLER
+// =======================
+function handleTaskSubmit() {
+  if (editingTaskId) {
+    updateTask();
+  } else {
+    createTaskFromForm();
+  }
+}
+
+// =======================
+// CREATE TASK
+// =======================
+function createTaskFromForm() {
+  const name = document.getElementById("taskName").value.trim();
+  const user = document.getElementById("taskUser").value.trim();
+  const date = document.getElementById("taskDate").value;
+
+  if (!name || !user || !date) {
+    alert("Complete all fields");
+    return;
+  }
+
+  const tasks = getTasks();
+
+  tasks.push({
+    id: Date.now(),
+    name,
+    user,
+    date,
+    status: "Pending"
+  });
+
+  saveTasks(tasks);
+  resetForm();
+  renderAll();
+}
+
+// =======================
+// EDIT TASK
+// =======================
+function editTask(id) {
+  const tasks = getTasks();
+  const task = tasks.find(t => t.id === id);
+  if (!task) return;
+
+  editingTaskId = id;
+
+  document.getElementById("taskName").value = task.name;
+  document.getElementById("taskUser").value = task.user;
+  document.getElementById("taskDate").value = task.date;
+
+  const btn = document.getElementById("createTaskBtn");
+  btn.innerHTML = `<i class="bi bi-check-lg"></i> Update Task`;
+  btn.classList.remove("btn-primary");
+  btn.classList.add("btn-success");
+}
+
+// =======================
+// UPDATE TASK
+// =======================
+function updateTask() {
+  const name = document.getElementById("taskName").value.trim();
+  const user = document.getElementById("taskUser").value.trim();
+  const date = document.getElementById("taskDate").value;
+
+  if (!name || !user || !date) {
+    alert("Complete all fields");
+    return;
+  }
+
+  const tasks = getTasks();
+  const task = tasks.find(t => t.id === editingTaskId);
+  if (!task) return;
+
+  task.name = name;
+  task.user = user;
+  task.date = date;
+
+  saveTasks(tasks);
+  resetForm();
+  renderAll();
+}
+
+// =======================
+// DELETE TASK
+// =======================
+function deleteTask(id) {
+  const tasks = getTasks().filter(t => t.id !== id);
+  saveTasks(tasks);
+  renderAll();
+}
+
+// =======================
+// STATUS
+// =======================
+function selectTask(id) {
+  selectedTaskId = id;
+}
+
+function updateOrderStatus() {
+  if (!selectedTaskId) {
+    alert("Select a task first");
+    return;
+  }
+
+  const newStatus = document.getElementById("statusSelect").value;
+  const tasks = getTasks();
+  const task = tasks.find(t => t.id === selectedTaskId);
+  if (!task) return;
+
+  task.status = newStatus;
+  saveTasks(tasks);
+  renderAll();
+}
+
+// =======================
+// RENDER DASHBOARD
+// =======================
+function renderDashboard() {
+  const tasks = getTasks();
+  const tbody = document.getElementById("ordersTableBody");
+  tbody.innerHTML = "";
+
+  tasks.forEach(task => {
+    const tr = document.createElement("tr");
+    tr.onclick = () => selectTask(task.id);
+
+    tr.innerHTML = `
+      <td>${task.id}</td>
+      <td>${task.user}</td>
+      <td>${task.date}</td>
+      <td>
+        <span class="badge ${
+          task.status === "Delivered" ? "bg-success" :
+          task.status === "Ready" ? "bg-info" :
+          task.status === "Preparing" ? "bg-warning" : "bg-secondary"
+        }">${task.status}</span>
+      </td>
+      <td>${task.name}</td>
+      <td>
+        <button class="btn btn-sm btn-outline-primary me-1"
+          onclick="event.stopPropagation(); editTask(${task.id})">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button class="btn btn-sm btn-outline-danger"
+          onclick="event.stopPropagation(); deleteTask(${task.id})">
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+// =======================
+// RENDER MY TASKS (READ ONLY)
+// =======================
+function renderMyTasks() {
+  const tasks = getTasks();
+  const tbody = document.querySelector("#solicitudes tbody");
+  tbody.innerHTML = "";
+
+  tasks.forEach(task => {
+    tbody.innerHTML += `
+      <tr>
+        <td>${task.id}</td>
+        <td>${task.name}</td>
+        <td>${task.user}</td>
+        <td>${task.date}</td>
+        <td>
+          <span class="badge ${
+            task.status === "Delivered" ? "bg-success" :
+            task.status === "Ready" ? "bg-info" :
+            task.status === "Preparing" ? "bg-warning" : "bg-secondary"
+          }">${task.status}</span>
+        </td>
+        <td class="text-end">
+          <button class="btn btn-sm btn-outline-secondary" disabled>
+            Read only
+          </button>
+        </td>
+      </tr>
+    `;
+  });
+}
+
+// =======================
+// STATS
+// =======================
+function updateStats() {
+  const tasks = getTasks();
+
+  document.getElementById("totalOrders").innerText = tasks.length;
+  document.getElementById("pendingOrders").innerText =
+    tasks.filter(t => t.status === "Pending").length;
+  document.getElementById("todayRevenue").innerText =
+    tasks.filter(t => t.status === "Delivered").length;
+}
+
+// =======================
+// RESET FORM
+// =======================
+function resetForm() {
+  editingTaskId = null;
+
+  document.getElementById("taskName").value = "";
+  document.getElementById("taskUser").value = "";
+  document.getElementById("taskDate").value = "";
+
+  const btn = document.getElementById("createTaskBtn");
+  btn.innerHTML = `<i class="bi bi-plus-lg"></i> Add Task`;
+  btn.classList.remove("btn-success");
+  btn.classList.add("btn-primary");
+}
+
+// =======================
+// MENU NAV
+// =======================
+document.querySelectorAll(".menu-link").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelectorAll(".menu-link").forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active-page"));
+    document.getElementById(link.dataset.page).classList.add("active-page");
+  });
+});
+
+// =======================
+// INIT
+// =======================
+function renderAll() {
+  renderDashboard();
+  renderMyTasks();
+  updateStats();
+}
+
+renderAll();
