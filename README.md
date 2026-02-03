@@ -1,6 +1,6 @@
 <div align="center">
-  <h1>¡Hola! Soy [Tu Nombre] 👋</h1>
-  <h3>Desarrollador Web | Python Backend | Apasionado por crear soluciones útiles</h3>
+  <h1>¡Hola! Soy Nicolas Garzon</h1>
+
 
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&pause=1000&color=00F79C&center=true&vCenter=true&width=435&lines=HTML+%2B+CSS+%2B+JavaScript;Python+%26+Django%2FFastAPI;Aprendiendo+cada+d%C3%ADa+algo+nuevo" alt="Typing SVG" />
 
@@ -20,7 +20,7 @@
     <a href="https://github.com/[tu-usuario]?tab=repositories">
       <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
     </a>
-    <!-- Agrega más según uses: React, Node, Django, etc. -->
+    
   </p>
 
   <br/>
