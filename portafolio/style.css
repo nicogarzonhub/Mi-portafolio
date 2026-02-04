@@ -1,0 +1,84 @@
+body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      margin: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px;
+      background: #1e40af;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 15px;
+      background: #020617;
+    }
+
+    nav button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .proyectos {
+      display: none;
+    }
+
+    .proyectos.activo {
+      display: block;
+    }
+
+    .semanas {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .semanas button {
+      background: #334155;
+      border: none;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .semana {
+      display: none;
+    }
+
+    .semana.activo {
+      display: block;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 8px;
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }

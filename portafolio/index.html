@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Portafolio | Nicolás Garzón</title>
+
+ <body>
+
+<header>
+  <h1> Mi Portafolio</h1>
+  <p>HTML · JavaScript · Python</p>
+</header>
+
+<nav>
+  <button onclick="mostrarSeccion('html')">HTML</button>
+  <button onclick="mostrarSeccion('js')">JavaScript</button>
+  <button onclick="mostrarSeccion('python')">Python</button>
+</nav>
+
+<main>
+
+<!-- HTML -->
+<section id="html" class="proyectos activo">
+  <h2>HTML</h2>
+
+  <div class="semanas">
+    <button onclick="mostrarSemana('html',1)">Semana 1</button>
+    <button onclick="mostrarSemana('html',2)">Semana 2</button>
+    <button onclick="mostrarSemana('html',3)">Semana 3</button>
+  </div>
+
+  <div class="semana html-semana activo" data-semana="1">
+    <div class="card">
+      <h3>HU1</h3>
+      <p>Creación de portafolio personal con página de mascotas</p>
+      <a href="https://github.com/nicogarzonhub/Mi-portafolio/tree/html/HTML1" target="_blank">
+        Ver trabajo
+      </a>
+    </div>
+  </div>
+
+  <div class="semana html-semana" data-semana="2">
+    <div class="card">
+      <h3>HU2</h3>
+      <p>CSS flexbox y CSS grid layout</p>
+      <a href="https://github.com/nicogarzonhub/Mi-portafolio/tree/html/HTML2" target="_blank">
+        Ver trabajo
+      </a>
+    </div>
+  </div>
+
+  <div class="semana html-semana" data-semana="3">
+    <div class="card">
+      <h3>HU3</h3>
+      <p>Media queries, diseño responsivo, optimización de Javascript básico</p>
+      <a href="https://github.com/nicogarzonhub/Mi-portafolio/tree/html/HTML3" target="_blank">
+        Ver trabajo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JAVASCRIPT -->
+<section id="js" class="proyectos">
+  <h2>JavaScript</h2>
+
+  <div class="semanas">
+    <button onclick="mostrarSemana('js',1)">Semana 1</button>
+    <button onclick="mostrarSemana('js',2)">Semana 2</button>
+    <button onclick="mostrarSemana('js',3)">Semana 3</button>
+    <button onclick="mostrarSemana('js',4)">Semana 4</button>
+  </div>
+
+  <div class="semana js-semana activo" data-semana="1">
+    <div class="card">
+      <h3>HU1</h3>
+      <p>Creación de un sistema interactivo de mensajes</p>
+      <a href="https://github.com/nicogarzonhub/Mi-portafolio/tree/javascript/JS1" target="_blank">
+        Ver trabajo
+      </a>
+    </div>
+  </div>
+
+  <div class="semana js-semana" data-semana="2">
+    <div class="card">
+      <h3>HU2</h3>
+      <p>Gestión de datos con objetos, Sets y Maps en JavaScript</p>
+      <a href="https://github.com/nicogarzonhub/Mi-portafolio/tree/javascript/JS2" target="_blank">
+        Ver trabajo
+      </a>
+    </div>
+  </div>
+
+  <div class="semana js-semana" data-semana="3">
+    <div class="card">
+      <h3>HU3</h3>
+      <p>Gestión dinámica del DOM con persistencia en el navegador</p>
+      <a href="https://github.com/nicogarzonhub/Mi-portafolio/tree/javascript/JS3" target="_blank">
+        Ver trabajo
+      </a>
+    </div>
+  </div>
+
+  <div class="semana js-semana" data-semana="4">
+    <div class="card">
+      <h3>HU4</h3>
+      <p>Desarrollo de una mini aplicación web integral con persistencia y consumo de APIs</p>
+      <a href="https://github.com/nicogarzonhub/Mi-portafolio/tree/javascript/JS4" target="_blank">
+        Ver trabajo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PYTHON -->
+<section id="python" class="proyectos">
+  <h2>Python</h2>
+
+  <div class="semanas">
+    <button onclick="mostrarSemana('python',1)">Semana 1</button>
+    <button onclick="mostrarSemana('python',2)">Semana 2</button>
+    <button onclick="mostrarSemana('python',3)">Semana 3</button>
+  </div>
+
+  <div class="semana python-semana activo" data-semana="1">
+    <div class="card">
+      <h3>HU1</h3>
+      <p>Fundamentos y operaciones básicas del inventario</p>
+      <a href="https://github.com/nicogarzonhub/Mi-portafolio/blob/python/HU1.py" target="_blank">
+        Ver trabajo
+      </a>
+    </div>
+  </div>
+
+  <div class="semana python-semana" data-semana="2">
+    <div class="card">
+      <h3>HU2</h3>
+      <p>Control de flujo y manejo de listas en el inventario</p>
+      <a href="https://github.com/nicogarzonhub/Mi-portafolio/blob/python/HU2.py" target="_blank">
+        Ver trabajo
+      </a>
+    </div>
+  </div>
+
+  <div class="semana python-semana" data-semana="3">
+    <div class="card">
+      <h3>HU3</h3>
+      <p>Inventario avanzado con colecciones y persistencia en archivos</p>
+      <a href="https://github.com/nicogarzonhub/Mi-portafolio/tree/python/HU3" target="_blank">
+        Ver trabajo
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
