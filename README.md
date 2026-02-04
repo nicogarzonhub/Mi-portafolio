@@ -50,7 +50,7 @@
 ## 🛠️ Tecnologías que utilizo
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,python,git,github,vscode,fastapi,sqlite,postgres" alt="tech stack" />
+  <img src="https://skillicons.dev/icons?i=html,css,js,python,git,github,vscode" alt="tech stack" />
   <!-- Puedes generar más iconos aquí: https://skillicons.dev/ -->
 </div>
 
