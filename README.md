@@ -45,70 +45,7 @@
 
 <br/>
 
-## 🚀 Proyectos Destacados
 
-Aquí tienes algunos de los proyectos de los que más orgulloso me siento:
-
-<table>
-  <tr>
-    <th>Proyecto</th>
-    <th>Tecnologías</th>
-    <th>Descripción</th>
-    <th>Demo / Repo</th>
-  </tr>
-  
-  <tr>
-    <td><b>Gestor de Tareas Avanzado</b></td>
-    <td>HTML • CSS • JavaScript • LocalStorage</td>
-    <td>App para organizar tareas con drag & drop, temas claro/oscuro y persistencia local</td>
-    <td>
-      <a href="https://tu-usuario.github.io/gestor-tareas">Demo</a> •
-      <a href="https://github.com/tu-usuario/gestor-tareas">Repo</a>
-    </td>
-  </tr>
-
-  <tr>
-    <td><b>Clon de Netflix (Landing)</b></td>
-    <td>HTML • CSS (Flex/Grid) • JavaScript</td>
-    <td>Landing page responsive inspirada en Netflix con animaciones suaves</td>
-    <td>
-      <a href="https://tu-usuario.github.io/netflix-clone">Demo</a> •
-      <a href="https://github.com/tu-usuario/netflix-clone">Repo</a>
-    </td>
-  </tr>
-
-  <tr>
-    <td><b>API REST de Libros</b></td>
-    <td>Python • FastAPI • SQLite</td>
-    <td>API completa (CRUD) para gestionar una biblioteca con autenticación JWT</td>
-    <td>
-      <a href="https://documenter.getpostman.com/view/xxxx">Docs</a> •
-      <a href="https://github.com/tu-usuario/api-libros-fastapi">Repo</a>
-    </td>
-  </tr>
-
-  <tr>
-    <td><b>Calculadora Científica</b></td>
-    <td>HTML • CSS • JavaScript</td>
-    <td>Calculadora con modo programador, conversor de bases y modo oscuro</td>
-    <td>
-      <a href="https://tu-usuario.github.io/calculadora-cientifica">Demo</a> •
-      <a href="https://github.com/tu-usuario/calculadora-cientifica">Repo</a>
-    </td>
-  </tr>
-
-  <tr>
-    <td><b>Web Scraper de Precios</b></td>
-    <td>Python • BeautifulSoup • Pandas</td>
-    <td>Script que extrae precios de productos y genera reportes en Excel/CSV</td>
-    <td>
-      <a href="https://github.com/tu-usuario/web-scraper-precios">Repo</a>
-    </td>
-  </tr>
-
-</table>
-
-<br/>
 
 ## 🛠️ Tecnologías que utilizo
 
@@ -119,25 +56,6 @@ Aquí tienes algunos de los proyectos de los que más orgulloso me siento:
 
 <br/>
 
-## 📊 Estadísticas GitHub
-
-<div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=[TU-USUARIO]&show_icons=true&theme=radical&hide_border=true&include_all_commits=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=[TU-USUARIO]&layout=compact&langs_count=8&theme=radical&hide_border=true"/>
-</div>
-
-<br/>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=[TU-USUARIO]&theme=radical&hide_border=true" alt="streak stats"/>
-</div>
-
-<br/>
-
----
-
-> “El código cuenta historias. Escribe las mejores que puedas.”  
-> — [Tu Nombre] ✍️
 
 ¡Gracias por visitar mi perfil! Si te gusta algún proyecto o quieres colaborar, no dudes en escribirme. 🚀
 
