@@ -1,6 +1,6 @@
 <div align="center">
   <h1>¡Hola! Soy Nicolas Garzon</h1>
-  <p>Aqui podras ver mis Proyectos relacionados con JavaScript, HTML, CSS Y Python</p>
+  <p>Aqui podras ver mis proyectos relacionados con JavaScript, HTML, CSS Y Python</p>
 
 
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&pause=1000&color=00F79C&center=true&vCenter=true&width=435&lines=HTML+%2B+CSS+%2B+JavaScript;Aprendiendo+cada+d%C3%ADa+algo+nuevo" alt="Typing SVG" />
