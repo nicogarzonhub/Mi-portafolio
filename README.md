@@ -48,7 +48,7 @@
 
 
 
-## 🛠️ Tecnologías que utilizo
+##  Tecnologías que utilizo
 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=html,css,js,python,git,github,vscode" alt="tech stack" />
