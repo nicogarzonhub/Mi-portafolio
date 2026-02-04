@@ -57,6 +57,6 @@
 <br/>
 
 
-¡Gracias por visitar mi perfil! Si te gusta algún proyecto o quieres colaborar, no dudes en escribirme. 🚀
+¡Gracias por visitar mi perfil! Si te gusta algún proyecto o quieres colaborar, no dudes en escribirme.
 
 Última actualización: Febrero 2026
